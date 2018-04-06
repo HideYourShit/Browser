@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="browser.css">
+    <script src="browser.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+
+
+
+  <body>
+
+<div>
+
+<div id="controls"class="w3-bar w3-dark-grey " style="-webkit-app-region: drag">
+
+<button class="w3-bar-item w3-btn"><i class="fas fa-times-circle" style="color: rgb(255,0,0);"></i></button>
+<button class="w3-bar-item w3-btn"><i class="fas fa-minus-circle"style="color:yellow;"></i></i></button>
+<button class="w3-bar-item w3-btn"><i class="fas fa-plus-circle"style="color:green;"></i>
+</button>
+
+<button class="w3-bar-item w3-button"><i class="fas fa-home rainbow"></i></button>
+<button class="w3-bar-item w3-button"><i class="fas fa-arrow-alt-circle-left rainbow"></i></button>
+<button class="w3-bar-item w3-button"><i class="fas fa-arrow-alt-circle-right rainbow"></i></button>
+<button class="w3-bar-item w3-button"><i class="fas fa-sync rainbow"></i></button>
+
+
+<button class="w3-bar-item w3-button w3-right"><div class="dropdown"><i class="fas fa-lock rainbow"></i></div></button>
+<button class="w3-bar-item w3-button w3-right" onclick="newWindow();"><i class="fas fa-plus"></i></button>
+
+<div class="dropdown-content">
+  <p>hey</p>
+</div>
+
+
+<input type="text" class="w3-bar-item w3-input w3-round-xlarge " placeholder="Search..">
+<button class="w3-bar-item w3-button w3-green">Go</button>
+
+</div>
+
+    <webview src="http://www.google.com" style="width:100%; height:95%;"></webview>
+</div>
+
+  </body>
+</html>

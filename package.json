@@ -1,0 +1,14 @@
+{
+    "name": "HideYourShit-Browser",
+    "version": "1.0.0",
+    "description": "Hide Your Shit Official Browser",
+    "main": "main.js",
+    "scripts": {
+        "start": "electron ."
+    },
+    "dependencies": {
+        "bootstrap": "^4.0.0",
+        "electron": "^1.8.4",
+        "electron-tabs": "^0.9.1"
+    }
+}
