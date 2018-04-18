@@ -9,6 +9,7 @@
     "dependencies": {
         "bootstrap": "^4.0.0",
         "electron": "^1.8.4",
+        "electron-debug": "^1.5.0",
         "electron-tabs": "^0.9.1"
     }
 }

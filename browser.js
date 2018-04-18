@@ -1,7 +1,12 @@
 window.onresize = doLayout;
 var isLoading = false;
 var locationURL = "";
+var forceHttps = false;
+
 onload = function() {
+
+  var webview = document.querySelector('webview');
+
   doLayout();
 
 
@@ -18,19 +23,18 @@ onload = function() {
   };
 
   document.querySelector('#reload').onclick = function() {
-
+      console.log("reloaded : " + webview.src);
       webview.reload();
 
   };
 
-  document.querySelector('#location-form').onsubmit = function(e) {
+  document.querySelector('#location-form').onclick = function(e) {
     e.preventDefault();
-
-
     navigateTo(document.querySelector('#location').value);
-
+    console.log(document.querySelector('#location').value);
 
   };
+
   function checkSearch(url){
 
     if(new RegExp("[a-zA-Z0-9]+://([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(url)) {
@@ -46,14 +50,18 @@ onload = function() {
 };
 
 function navigateTo(url) {
-//  if(url.includes('https://'))url.replace('https://', '');
-//  if(url.includes('http://'))url.replace('http://', '');
-//  url = "https://hideyourshitapp.com:443/proxy.php?https://" + url;
+  //  url = "https://hideyourshitapp.com:443/proxy.php?https://" + url;
+
+if(url.includes('https://'))url.replace('https://', '');
+if(url.includes('http://'))url.replace('http://', '');
+if(forceHttps){url = "https://" + url;}
+else {url = "http://" + url;}
+
 
   document.querySelector('webview').src = url;
 }
 
-/*
+
 function extractHostname(url) {
     var hostname;
     if (url.indexOf("://") > -1) {
@@ -67,7 +75,7 @@ function extractHostname(url) {
 
     return hostname;
 }
-*/
+
 function newWindow() {
                        const remote = require('electron').remote;
                    const BrowserWindow = remote.BrowserWindow;
@@ -78,20 +86,21 @@ function newWindow() {
 function handleLoadCommit() {
   var webview = document.querySelector('webview');
 
-  document.querySelector('#location').value = webview.getUrl();
-
+  document.querySelector('#location').value = getlocURL(webview.src);
 
   document.querySelector('#back').disabled = !webview.canGoBack();
   document.querySelector('#forward').disabled = !webview.canGoForward();
 }
-/*
+
 function getlocURL(){
-   var url = webview.getUrl();
-   url = url.replace('https://hideyourshitapp.com:443/proxy.php?https://','');
+  var webview = document.querySelector('webview');
+   var url = webview.src;
+   if(url.includes('https://')) url = url.replace('https://hideyourshitapp.com:443/proxy.php?https://','');
+
    return extractHostname(url);
 
 }
-*/
+
 function handleLoadStart(event) {
   document.body.classList.add('loading');
   isLoading = true;
@@ -125,6 +134,7 @@ function handleLoadAbort(event) {
   console.log('  url: ' + event.url);
   console.log('  isTopLevel: ' + event.isTopLevel);
   console.log('  type: ' + event.type);
+  alert("Page Failed To Load.");
 }
 
 function handleLoadRedirect(event) {

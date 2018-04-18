@@ -2,39 +2,57 @@
 <html>
   <head>
     <link rel="stylesheet" href="browser.css">
-    <script src="browser.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet">
+    <script src="browser.js"></script>
 
 
   <body>
 
-<div>
+<div id="controls" style="-webkit-app-region: drag">
+  <nav class="navbar navbar-light bg-light" >
 
-<div id="controls"class="w3-bar w3-dark-grey " style="-webkit-app-region: drag">
+    <form class="form-inline">
 
-<button class="w3-bar-item w3-btn"><i class="fas fa-times-circle" style="color: rgb(255,0,0);"></i></button>
-<button class="w3-bar-item w3-btn"><i class="fas fa-minus-circle"style="color:yellow;"></i></i></button>
-<button class="w3-bar-item w3-btn"><i class="fas fa-plus-circle"style="color:green;"></i>
-</button>
+      <button type="button" id="forward"style="margin-left:65px" class="btn btn-outline-secondary mr-sm-2 searchthing"><i class="fas fa-arrow-left"></i></button>
 
-<button class="w3-bar-item w3-button"><i class="fas fa-home rainbow"></i></button>
-<button class="w3-bar-item w3-button"><i class="fas fa-arrow-alt-circle-left rainbow"></i></button>
-<button class="w3-bar-item w3-button"><i class="fas fa-arrow-alt-circle-right rainbow"></i></button>
-<button class="w3-bar-item w3-button"><i class="fas fa-sync rainbow"></i></button>
+      <button type="button"id="back"class="btn btn-outline-secondary mr-sm-2"><i class="fas fa-arrow-right"></i></button>
+      <button type="button"id="home"class="btn btn-outline-secondary mr-sm-2"><i class="fas fa-home"></i></button>
+
+      <div class="input-group-prepend">
+          <div class="input-group-text" style="margin-left:40px">https://</div>
+      </div>
+      <form >
+      <input  id="location" onclick"dothing()" class="navbar-center form-control mr-sm-2" style="width: 500px;" type="text" placeholder="Search" aria-label="Search">
+      <button type="button" id="location-form" onclick"dothing()" class="btn btn-outline-secondary mr-sm-2">Search</button>
+      </form>
+
+      <button id="reload" type="button"class="btn btn-outline-secondary mr-sm-2"><i class="fas fa-sync-alt"></i></button>
+
+      <script>
+      /*
+      var x = document.getElementById("location-form");
+      x.style.display ="none";
+      function dothing(){
+        var x = document.getElementById("location-form");
+
+          if (x.style.display === "none") {
+              x.style.display = "block";
+          } else {
+              x.style.display = "none";
+          }
+      }
+      </script>
+    </form>
+  </nav>
 
 
-<button class="w3-bar-item w3-button w3-right"><div class="dropdown"><i class="fas fa-lock rainbow"></i></div></button>
-<button class="w3-bar-item w3-button w3-right" onclick="newWindow();"><i class="fas fa-plus"></i></button>
 
-<div class="dropdown-content">
-  <p>hey</p>
-</div>
-
-
-<input type="text" class="w3-bar-item w3-input w3-round-xlarge " placeholder="Search..">
-<button class="w3-bar-item w3-button w3-green">Go</button>
 
 </div>
 
